@@ -52,7 +52,7 @@ export default class AppContainer extends Component {
         configureScene={this.configureScene.bind(this)}
         renderScene={this.renderScene.bind(this)}
         initialRoute={{
-          title: "Home",
+          title: "Login",
           passProps: {
             stores: this.state.store
           }
