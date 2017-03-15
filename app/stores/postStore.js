@@ -32,7 +32,7 @@ export default class PostStore extends MobxFirebaseStore {
       user: this.user.uid
     }
     key = this.fb.child(base).push().key;
-    console.log("add post here");
+
     let updates = {};
     updates['/' + base + '/' + key] = post;
     updates['/' + this.user.uid + '/history/' + key] = true;

@@ -6,6 +6,9 @@ import Button from './Button';
 import CenterView from './CenterView';
 import Welcome from './Welcome';
 
+import SettingsStore from '../../app/stores/settingsStore';
+import AuthStore from '../../app/stores/authStore';
+
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
     <Welcome showApp={linkTo('Button')}/>

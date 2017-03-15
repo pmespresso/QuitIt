@@ -13,7 +13,7 @@ export default class AuthStore {
   @action
   signIn({email, password}) {
     if(this.authUser) {
-      return Promise.resolve(this.authUser);
+      return Promise.resolve(this.authUser).catch(error => {console.error(error.msg)});
     }
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }

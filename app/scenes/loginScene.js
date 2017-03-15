@@ -12,16 +12,17 @@ import {
 import Login from '../components/Login';
 import { observer } from 'mobx-react/native';
 
-
+@observer
 export default class LoginScene extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const { stores } = this.props;
+    const { settings } = this.props.stores;
+
     return (
-        <Image style={styles.loginBackgroundImage} source={stores.settings.loginBG} >
+        <Image style={styles.loginBackgroundImage} source={settings.loginBG} >
           <View style={styles.container}>
             <Login {...this.props} />
           </View>
