@@ -21,8 +21,10 @@ export default class AddItemBox extends Component {
   handleChangeText(text) { this.setState({ text: text }) }
 
   //should submit to Firebase through Item Store and update ToQuitList
-  handleButtonPress() {
-    console.log("here")
+  post() {
+    const { posts } = this.props.stores;
+    posts.addPost(this.state.text);
+    console.error('here');
   }
 
   render() {
@@ -36,7 +38,7 @@ export default class AddItemBox extends Component {
         />
         <Button
           style={styles.button}
-          onPress={this.handleButtonPress}
+          onPress={() => { this.handleButtonPress } }
           title="Commit"
           color="#841584"
           accessibilityLabel="Commit to quitting what you just typed in the box"
@@ -65,6 +67,9 @@ const styles = StyleSheet.create({
     borderColor: '#d6d7da'
   },
   button: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20
   }
 })

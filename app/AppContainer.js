@@ -9,7 +9,7 @@ import HomeScene from './scenes/homeScene';
 import SettingsStore from './stores/settingsStore';
 import AuthStore from './stores/authStore';
 
-const settings = new SettingsStore();
+const settingStore= new SettingsStore();
 const authStore = new AuthStore();
 
 export default class AppContainer extends Component {
@@ -18,7 +18,7 @@ export default class AppContainer extends Component {
 
     this.state = {
       store: {
-        settings: settings,
+        settings: settingStore,
         auth: authStore
       }
     }
